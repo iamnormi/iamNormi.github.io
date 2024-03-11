@@ -1,0 +1,101 @@
+  
+    nav ul {
+    display
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px; /* Use 100% width to cover the entire viewport */
+      height: 100vh;
+
+      background: #0ef;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      z-index: 1; /* Ensure the menu appears above other content */
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+html 
+
+        <nav class="navbar" id="myLinks">
+            <ul>
+                <li style="--i:1"><a  href="#Home"  class="active">Home</a></li>
+                <li style="--i:2"><a  href="#About" >About</a></li>
+                <li style="--i:3"><a  href="#Services" >Services</a></li>
+                <li style="--i:4"><a  href="#Skills" >Skills</a></li>
+                <li style="--i:5"><a  href="#Projects" >Projects</a></li>
+                <li style="--i:6"><a  href="#Contact">Contact</a></li>
+                <i class='bx bx-x' ></i>
+            </ul>
+            <i class='bx bx-menu'></i>
+
+        </nav>
+
+css
+
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideUP .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+
+
+}
+nav a:hover {
+    color: #0ef;
+}
+
+@media only screen and (max-width: 1080px){
+    nav .bx {
+        display: block;
+        font-size: 30px;
+    }
+    nav ul li{
+        display: block;
+        background: #0ef;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        animation: none;
+        opacity: 1;
+        visibility: visible;
+        margin: 10px 0 ;
+    }
+    nav ul li a {
+        color: #000;
+    }
+    nav a:hover{
+        color: #000;
+    }
+
+}
+on small screen in want change inline-block list to block list 
+problem: because of animation the block list only show final li element "Contact" other element are override by that element "Contact"
+kind of solved but only two element from list showing
+User
+give solution to how to expand space to display the list completely
+Note:want to arrange them vertically
